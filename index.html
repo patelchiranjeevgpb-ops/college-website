@@ -1,16 +1,474 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Choudhary Parma Ram Godara Agriculture College</title>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official website of Choudhary Parma Ram Godara Agriculture College, Bhadra, Hanumangarh, Rajasthan." />
+  <title>CPRG Agriculture College, Bhadra</title>
+  <style>
+    :root{
+      --green:#0c5c38;
+      --green-2:#15804f;
+      --lime:#dff2e7;
+      --gold:#e8b03f;
+      --ink:#183127;
+      --muted:#617268;
+      --paper:#f7faf8;
+      --white:#ffffff;
+      --shadow:0 14px 45px rgba(16,74,46,.14);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.6;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+    .topbar{background:#083f29;color:#e9fff3;font-size:.92rem}
+    .topbar .container{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:8px 0;flex-wrap:wrap}
+    .social-mini{display:flex;gap:14px;flex-wrap:wrap}
+    .social-mini a:hover{color:#fff}
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid #e6eee9;
+    }
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{width:66px;height:66px;object-fit:contain;border-radius:50%;background:#fff}
+    .brand-text strong{display:block;font-size:1rem;line-height:1.2;color:var(--green)}
+    .brand-text span{display:block;font-size:.8rem;color:var(--muted);margin-top:3px}
+    nav{display:flex;gap:20px;align-items:center;font-weight:700;font-size:.93rem}
+    nav a{position:relative;padding:10px 0}
+    nav a:after{content:"";position:absolute;left:0;bottom:4px;width:0;height:2px;background:var(--green-2);transition:.25s}
+    nav a:hover:after{width:100%}
+    .nav-cta{background:var(--green);color:#fff;padding:10px 15px;border-radius:12px}
+    .nav-cta:after{display:none}
+    .menu-btn{display:none;border:0;background:#eef6f1;color:var(--green);font-size:1.4rem;padding:8px 12px;border-radius:10px;cursor:pointer}
 
+    .hero{
+      position:relative;
+      min-height:78vh;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      background:#0b4d31;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        linear-gradient(90deg,rgba(5,49,30,.88),rgba(5,49,30,.54) 48%,rgba(5,49,30,.16)),
+        url("assets/campus_gate.jpeg") center/cover no-repeat;
+      transform:scale(1.01);
+    }
+    .hero .container{position:relative;z-index:2;padding:88px 0}
+    .eyebrow{
+      display:inline-flex;gap:8px;align-items:center;
+      background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+      color:#fff;padding:7px 12px;border-radius:999px;font-weight:700;font-size:.88rem
+    }
+    .hero h1{color:#fff;font-size:clamp(2.35rem,5.8vw,5.3rem);line-height:1.02;max-width:900px;margin:18px 0 16px;letter-spacing:-.035em}
+    .hero p{color:#e7f6ed;font-size:clamp(1rem,1.8vw,1.3rem);max-width:760px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:13px;font-weight:800;border:1px solid transparent;transition:.25s}
+    .btn-primary{background:var(--gold);color:#2c2a18}
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.04)}
+    .btn-ghost{border-color:rgba(255,255,255,.46);color:#fff;background:rgba(255,255,255,.08)}
+    .hero-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px;max-width:960px}
+    .hero-card{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px);color:#fff;padding:16px;border-radius:16px}
+    .hero-card strong{display:block;font-size:1.35rem}.hero-card span{font-size:.86rem;color:#dff0e5}
+
+    section{padding:84px 0}
+    .section-kicker{color:var(--green-2);font-weight:850;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}
+    .section-title{font-size:clamp(1.9rem,3.6vw,3.2rem);line-height:1.12;letter-spacing:-.025em;margin:8px 0 14px}
+    .section-lead{color:var(--muted);max-width:760px;margin:0}
+    .grid-2{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+    .about-img{border-radius:var(--radius);box-shadow:var(--shadow);min-height:420px;object-fit:cover;width:100%}
+    .checks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+    .check{background:var(--paper);padding:13px 15px;border-radius:13px;font-weight:750;border:1px solid #e6efe9}
+
+    .admission{background:linear-gradient(135deg,#eff8f2,#fbfdfb)}
+    .admission-card{
+      display:grid;grid-template-columns:1.25fr .75fr;gap:0;
+      overflow:hidden;border-radius:28px;background:#fff;box-shadow:var(--shadow)
+    }
+    .admission-main{padding:38px}
+    .admission-side{background:var(--green);color:#fff;padding:38px;display:flex;flex-direction:column;justify-content:center}
+    .admission-side .fee{font-size:2.4rem;font-weight:900;line-height:1}.admission-side small{color:#cce8d7}
+    .detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+    .detail{border:1px solid #e2ece5;border-radius:15px;padding:16px}
+    .detail b{display:block;color:var(--green);margin-bottom:4px}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+    .info-card{background:#fff;border:1px solid #e5eee8;border-radius:18px;padding:24px;box-shadow:0 8px 24px rgba(22,71,47,.06)}
+    .info-card .icon{font-size:1.8rem}
+    .info-card h3{margin:12px 0 8px}.info-card p{margin:0;color:var(--muted)}
+
+    .leadership{background:#0c4f32;color:#fff}
+    .leadership .section-kicker{color:#b9e8cc}.leadership .section-lead{color:#d7eadf}
+    .leader-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px}
+    .leader-card{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:20px}
+    .leader-card img{width:180px;height:220px;object-fit:cover;border-radius:16px;background:#fff}
+    .leader-card h3{font-size:1.45rem;margin:0 0 4px}.leader-card .role{color:#c8ead6;font-weight:800;margin-bottom:10px}
+    .leader-card p{color:#e4f1e9;margin:0}
+
+    .gallery-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+    .tab-btn{border:1px solid #dce9e1;background:#fff;color:var(--ink);padding:10px 15px;border-radius:999px;font-weight:800;cursor:pointer}
+    .tab-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:12px;margin-top:20px}
+    .gallery-item{position:relative;border-radius:16px;overflow:hidden;background:#edf4ef}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.35s}
+    .gallery-item:hover img{transform:scale(1.05)}
+    .gallery-item span{position:absolute;left:10px;bottom:10px;background:rgba(8,45,29,.75);color:#fff;padding:5px 9px;border-radius:8px;font-size:.78rem;font-weight:800}
+    .gallery-item.hidden{display:none}
+
+    .campus-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+    .campus-strip img{height:270px;width:100%;object-fit:cover;border-radius:18px}
+
+    .notice-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+    .notice{border-left:5px solid var(--gold);background:#fff6df;padding:20px;border-radius:14px}
+    .notice h3{margin:0 0 7px}.notice p{margin:0;color:#61593f}
+
+    .contact{background:#f3f8f5}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px}
+    .contact-card{background:#fff;border-radius:20px;padding:28px;box-shadow:0 10px 28px rgba(22,71,47,.08)}
+    .contact-list{display:grid;gap:13px;margin-top:18px}
+    .contact-item{padding-bottom:12px;border-bottom:1px solid #edf2ef}
+    .contact-item b{display:block;color:var(--green)}
+    .social-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .social-links a{background:#eef6f1;color:var(--green);padding:10px 13px;border-radius:10px;font-weight:800}
+    .social-links a:hover{background:var(--green);color:#fff}
+    .map-placeholder{min-height:330px;border-radius:18px;background:
+      linear-gradient(rgba(9,76,47,.72),rgba(9,76,47,.72)),
+      url("assets/campus_lawn.jpeg") center/cover no-repeat;
+      display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:30px}
+
+    footer{background:#072f20;color:#d8e8df;padding:34px 0}
+    .footer-wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    footer strong{color:#fff}
+
+    .backtop{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;border:0;background:var(--green);color:#fff;font-size:1.1rem;box-shadow:var(--shadow);cursor:pointer;display:none}
+    .backtop.show{display:block}
+
+    @media (max-width: 930px){
+      nav{position:absolute;left:4%;right:4%;top:86px;background:#fff;border:1px solid #e3ece7;border-radius:16px;padding:16px;box-shadow:var(--shadow);display:none;flex-direction:column;align-items:flex-start}
+      nav.open{display:flex}.menu-btn{display:block}
+      .hero-cards{grid-template-columns:repeat(2,1fr)}
+      .grid-2,.admission-card,.contact-grid{grid-template-columns:1fr}
+      .leader-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width: 620px){
+      .topbar .container{justify-content:center;text-align:center}
+      .brand-text strong{font-size:.85rem}.brand img{width:54px;height:54px}
+      .hero{min-height:82vh}.hero .container{padding:70px 0}
+      .hero-cards{grid-template-columns:1fr 1fr}
+      .hero-card strong{font-size:1.08rem}
+      section{padding:64px 0}
+      .checks,.detail-grid,.cards,.gallery-grid,.campus-strip{grid-template-columns:1fr}
+      .leader-card{grid-template-columns:1fr;text-align:center}.leader-card img{margin:auto;width:200px}
+      .gallery-grid{grid-auto-rows:260px}
+      .notice-wrap{grid-template-columns:1fr}
+    }
+  </style>
+</head>
 <body>
 
-    <h1>Choudhary Parma Ram Godara Agriculture College</h1>
+  <div class="topbar">
+    <div class="container">
+      <div>📍 Nohar–Hisar Bypass Road, Bhadra, Hanumangarh, Rajasthan – 335501</div>
+      <div class="social-mini">
+        <a href="tel:01504294451">☎ 01504-294451</a>
+        <a href="mailto:godaraagcollege@gmail.com">✉ godaraagcollege@gmail.com</a>
+      </div>
+    </div>
+  </div>
 
-    <h2>Bhadra, Hanumangarh, Rajasthan</h2>
+  <header>
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">
+        <img src="assets/logo.jpg" alt="CPRG Agriculture College logo">
+        <div class="brand-text">
+          <strong>Choudhary Parma Ram Godara Agriculture College</strong>
+          <span>Bhadra, Hanumangarh • Affiliated to SKRAU, Bikaner</span>
+        </div>
+      </a>
 
-    <p>Welcome to our official college website.</p>
+      <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+      <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#admission">Admission</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#admission">Apply / Enquire</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="eyebrow">🌱 Practical Learning • Agricultural Excellence</div>
+        <h1>Learn Agriculture.<br>Build Your Future.</h1>
+        <p>
+          Choudhary Parma Ram Godara Agriculture College, Bhadra provides a learning environment
+          focused on agricultural knowledge, field experience, practical skills and student development.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#admission">Admissions 2026–27</a>
+          <a class="btn btn-ghost" href="#gallery">Explore Campus Life</a>
+        </div>
+
+        <div class="hero-cards">
+          <div class="hero-card"><strong>4 Years</strong><span>B.Sc. (Hons.) Agriculture</span></div>
+          <div class="hero-card"><strong>120</strong><span>Student Intake</span></div>
+          <div class="hero-card"><strong>₹25,500</strong><span>Fee per semester</span></div>
+          <div class="hero-card"><strong>SKRAU</strong><span>Affiliated to Bikaner</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container grid-2">
+        <div>
+          <div class="section-kicker">About the College</div>
+          <h2 class="section-title">Agricultural education rooted in practical experience</h2>
+          <p class="section-lead">
+            The college aims to support students with strong academic foundations, practical exposure,
+            field-based learning, co-curricular participation and a campus environment that encourages
+            confidence, discipline and professional growth.
+          </p>
+          <div class="checks">
+            <div class="check">✓ Field-based learning</div>
+            <div class="check">✓ Practical laboratories</div>
+            <div class="check">✓ Seminars & expert talks</div>
+            <div class="check">✓ Sports & student activities</div>
+          </div>
+        </div>
+        <img class="about-img" src="assets/campus_building.jpeg" alt="College campus building">
+      </div>
+    </section>
+
+    <section class="admission" id="admission">
+      <div class="container">
+        <div class="section-kicker">Admissions</div>
+        <h2 class="section-title">B.Sc. (Hons.) Agriculture – 4 Years</h2>
+        <div class="admission-card">
+          <div class="admission-main">
+            <p class="section-lead">
+              Admissions are based on the prescribed eligibility and JET requirements.
+              Contact the college office for the current admission schedule and document guidance.
+            </p>
+            <div class="detail-grid">
+              <div class="detail"><b>Eligibility</b>12th with Agriculture / Biology / Mathematics + JET</div>
+              <div class="detail"><b>Intake</b>120 students</div>
+              <div class="detail"><b>Duration</b>4 Years</div>
+              <div class="detail"><b>Affiliation</b>Swami Keshwanand Rajasthan Agricultural University (SKRAU), Bikaner</div>
+            </div>
+          </div>
+          <div class="admission-side">
+            <small>Fee per semester</small>
+            <div class="fee">₹25,500</div>
+            <p>For admission enquiries, contact the college office.</p>
+            <a class="btn btn-primary" href="tel:01504294451">Call 01504-294451</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="facilities">
+      <div class="container">
+        <div class="section-kicker">Learning & Facilities</div>
+        <h2 class="section-title">Beyond the classroom</h2>
+        <p class="section-lead">A balanced learning environment with practical exposure, academic activities and student engagement.</p>
+        <div class="cards">
+          <div class="info-card"><div class="icon">🧪</div><h3>Practical Learning</h3><p>Hands-on laboratory and practical activities support concept-based agricultural learning.</p></div>
+          <div class="info-card"><div class="icon">🌾</div><h3>Field Exposure</h3><p>Students observe crops, field conditions and agricultural practices through practical sessions.</p></div>
+          <div class="info-card"><div class="icon">🎓</div><h3>Seminars</h3><p>Guest lectures, seminars and academic interactions help students broaden their perspective.</p></div>
+          <div class="info-card"><div class="icon">🏏</div><h3>Sports</h3><p>Sports and games encourage fitness, teamwork, leadership and healthy competition.</p></div>
+          <div class="info-card"><div class="icon">🏆</div><h3>Student Recognition</h3><p>Academic and co-curricular achievements are celebrated through student felicitation activities.</p></div>
+          <div class="info-card"><div class="icon">🌿</div><h3>Campus Environment</h3><p>A green campus atmosphere supports a positive and engaging learning experience.</p></div>
+        </div>
+
+        <div class="campus-strip">
+          <img src="assets/campus_gate.jpeg" alt="College entrance gate">
+          <img src="assets/campus_lawn.jpeg" alt="Green campus">
+          <img src="assets/practical3.jpeg" alt="Student practical activity">
+        </div>
+      </div>
+    </section>
+
+    <section class="leadership" id="leadership">
+      <div class="container">
+        <div class="section-kicker">Leadership</div>
+        <h2 class="section-title">Guiding students toward knowledge, skill and responsibility</h2>
+        <p class="section-lead">
+          The institution emphasizes quality agricultural education, practical skills, holistic development
+          and preparation for employment, higher education and self-employment opportunities.
+        </p>
+
+        <div class="leader-grid">
+          <article class="leader-card">
+            <img src="assets/director.jpeg" alt="Choudhary Vikash Godara">
+            <div>
+              <h3>Choudhary Vikash Godara Ji</h3>
+              <div class="role">Director</div>
+              <p>
+                Our focus is to provide students with meaningful agricultural education that connects
+                classroom knowledge with practical skills, confidence and future opportunities.
+              </p>
+            </div>
+          </article>
+
+          <article class="leader-card">
+            <img src="assets/principal.jpeg" alt="Dr. Basant Kumar Sharma">
+            <div>
+              <h3>Dr. Basant Kumar Sharma</h3>
+              <div class="role">Principal</div>
+              <p>
+                The college encourages academic discipline, practical learning and active participation
+                so that students grow into capable and responsible agriculture professionals.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-kicker">Campus Gallery</div>
+        <h2 class="section-title">College life in action</h2>
+        <p class="section-lead">Explore practical learning, seminars, sports and student celebrations.</p>
+
+        <div class="gallery-tabs">
+          <button class="tab-btn active" onclick="filterGallery('all', this)">All</button>
+          <button class="tab-btn" onclick="filterGallery('practical', this)">Practical</button>
+          <button class="tab-btn" onclick="filterGallery('seminar', this)">Seminars</button>
+          <button class="tab-btn" onclick="filterGallery('sports', this)">Sports</button>
+          <button class="tab-btn" onclick="filterGallery('fresher', this)">Fresher Party</button>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-cat="practical"><img src="assets/practical1.jpeg" alt="Practical activity"><span>Practical</span></div>
+          <div class="gallery-item" data-cat="practical"><img src="assets/practical2.jpeg" alt="Practical activity"><span>Practical</span></div>
+          <div class="gallery-item" data-cat="practical"><img src="assets/practical4.jpeg" alt="Field practical"><span>Field Work</span></div>
+          <div class="gallery-item" data-cat="practical"><img src="assets/practical5.jpeg" alt="Agriculture practical"><span>Practical</span></div>
+
+          <div class="gallery-item" data-cat="seminar"><img src="assets/seminar1.jpeg" alt="Seminar"><span>Seminar</span></div>
+          <div class="gallery-item" data-cat="seminar"><img src="assets/seminar2.jpeg" alt="Guest lecture"><span>Guest Lecture</span></div>
+          <div class="gallery-item" data-cat="seminar"><img src="assets/seminar3.jpeg" alt="Academic activity"><span>Academic Activity</span></div>
+          <div class="gallery-item" data-cat="seminar"><img src="assets/seminar4.jpeg" alt="Student felicitation"><span>Felicitation</span></div>
+
+          <div class="gallery-item" data-cat="sports"><img src="assets/sports1.jpeg" alt="Sports activity"><span>Sports</span></div>
+          <div class="gallery-item" data-cat="sports"><img src="assets/sports2.jpeg" alt="Sports activity"><span>Sports</span></div>
+          <div class="gallery-item" data-cat="sports"><img src="assets/sports3.jpeg" alt="Outdoor sports"><span>Games</span></div>
+          <div class="gallery-item" data-cat="sports"><img src="assets/sports5.jpeg" alt="Sports event"><span>Sports Event</span></div>
+
+          <div class="gallery-item" data-cat="fresher"><img src="assets/fresher1.jpeg" alt="Fresher party"><span>Fresher Party</span></div>
+          <div class="gallery-item" data-cat="fresher"><img src="assets/fresher2.jpeg" alt="Fresher party"><span>Celebration</span></div>
+          <div class="gallery-item" data-cat="fresher"><img src="assets/fresher3.jpeg" alt="Student felicitation"><span>Felicitation</span></div>
+          <div class="gallery-item" data-cat="fresher"><img src="assets/fresher4.jpeg" alt="Student event"><span>Campus Life</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-kicker">News & Updates</div>
+        <h2 class="section-title">Latest notices</h2>
+        <div class="notice-wrap">
+          <div class="notice">
+            <h3>Admissions 2026–27</h3>
+            <p>Admission enquiries are open. Contact the college office for JET-based admission guidance and document requirements.</p>
+          </div>
+          <div class="notice">
+            <h3>Faculty Section</h3>
+            <p>Faculty profiles will be added in the next website update.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-kicker">Contact Us</div>
+        <h2 class="section-title">Connect with CPRG Agriculture College</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>College Office</h3>
+            <div class="contact-list">
+              <div class="contact-item"><b>Address</b>Nohar–Hisar Bypass Road, Bhadra, Distt. Hanumangarh, Rajasthan – 335501</div>
+              <div class="contact-item"><b>Phone</b><a href="tel:01504294451">01504-294451</a></div>
+              <div class="contact-item"><b>Email</b><a href="mailto:godaraagcollege@gmail.com">godaraagcollege@gmail.com</a></div>
+              <div class="contact-item"><b>Course</b>B.Sc. (Hons.) Agriculture – 4 Years</div>
+            </div>
+            <div class="social-links">
+              <a href="https://www.youtube.com/@CPRGAG" target="_blank" rel="noopener">YouTube</a>
+              <a href="https://www.instagram.com/cprg_ag_college_official/?hl=en" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.facebook.com/people/Ch-Parmaram-Godara-Agriculture-College-Bhadra/61552362569079/" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://whatsapp.com/channel/0029Va6EWVE4IBhASh47N81g" target="_blank" rel="noopener">WhatsApp Channel</a>
+            </div>
+          </div>
+
+          <div class="map-placeholder">
+            <div>
+              <h3 style="font-size:1.8rem;margin:0 0 8px">Visit Our Campus</h3>
+              <p style="margin:0 0 18px;color:#e1f2e8">Nohar–Hisar Bypass Road, Bhadra, Hanumangarh, Rajasthan</p>
+              <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Nohar+Hisar+Bypass+Road+Bhadra+Hanumangarh+Rajasthan+335501" target="_blank" rel="noopener">Open in Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong>Choudhary Parma Ram Godara Agriculture College, Bhadra</strong><br>
+        <span>Affiliated to Swami Keshwanand Rajasthan Agricultural University (SKRAU), Bikaner</span>
+      </div>
+      <div>© <span id="year"></span> CPRG Agriculture College. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <button class="backtop" id="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('nav').classList.toggle('open');
+    }
+    document.querySelectorAll('#nav a').forEach(a=>{
+      a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open'));
+    });
+
+    function filterGallery(category, btn){
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.gallery-item').forEach(item=>{
+        item.classList.toggle('hidden', category !== 'all' && item.dataset.cat !== category);
+      });
+    }
+
+    const backtop = document.getElementById('backtop');
+    window.addEventListener('scroll',()=>{
+      backtop.classList.toggle('show', window.scrollY > 500);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

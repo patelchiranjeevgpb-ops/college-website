@@ -78,10 +78,13 @@
       display:grid;
       place-items:center;
       overflow:hidden;
-      background:#0b4d31;
+      background:
+  linear-gradient(90deg,rgba(5,49,30,.82),rgba(5,49,30,.48) 48%,rgba(5,49,30,.12)),
+  url("assets/hero_campus.png") center/cover no-repeat;
     }
     .hero:before{
-      content:"";
+  display:none;
+  content:"";
       position:absolute;inset:0;
       background:
         linear-gradient(90deg,rgba(5,49,30,.88),rgba(5,49,30,.54) 48%,rgba(5,49,30,.16)),

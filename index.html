@@ -220,7 +220,85 @@ header img[alt="CPRG Agriculture College Logo"]{
   </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> </head>
 <body>
+<!-- ADMISSION ENQUIRY POPUP START -->
+<div id="admissionPopup" style="position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:99999;display:flex;align-items:center;justify-content:center;padding:15px;">
 
+  <div style="background:white;width:100%;max-width:480px;border-radius:18px;padding:25px;position:relative;box-shadow:0 15px 50px rgba(0,0,0,.3);">
+
+    <button onclick="closeAdmissionPopup()"
+      style="position:absolute;right:12px;top:10px;border:0;background:none;font-size:28px;cursor:pointer;color:#555;">
+      &times;
+    </button>
+
+    <div style="text-align:center;">
+      <div style="color:#e96816;font-weight:900;font-size:14px;">
+        ADMISSIONS OPEN 2026–27
+      </div>
+
+      <h2 style="color:#0c5c38;margin:7px 0;">
+        Admission Enquiry
+      </h2>
+
+      <p style="margin:0 0 18px;color:#666;">
+        B.Sc. (Hons.) Agriculture – 4 Years
+      </p>
+    </div>
+
+    <input id="admissionName" type="text" placeholder="Student Name"
+      style="width:100%;padding:12px;margin:7px 0;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;">
+
+    <input id="admissionMobile" type="tel" placeholder="Mobile Number"
+      style="width:100%;padding:12px;margin:7px 0;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;">
+
+    <input id="admissionCity" type="text" placeholder="Village / City"
+      style="width:100%;padding:12px;margin:7px 0;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;">
+
+    <select id="admissionStream"
+      style="width:100%;padding:12px;margin:7px 0 15px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;">
+      <option value="">12th Stream / Subject</option>
+      <option>Agriculture</option>
+      <option>Biology</option>
+      <option>Mathematics</option>
+    </select>
+
+    <button onclick="submitAdmissionEnquiry()"
+      style="width:100%;background:#0c7c38;color:white;border:0;padding:14px;border-radius:9px;font-size:16px;font-weight:800;cursor:pointer;">
+      Submit Enquiry
+    </button>
+
+  </div>
+</div>
+<!-- ADMISSION ENQUIRY POPUP END -->
+
+<script>
+function closeAdmissionPopup(){
+  document.getElementById('admissionPopup').style.display='none';
+}
+
+function submitAdmissionEnquiry(){
+  var name=document.getElementById('admissionName').value;
+  var mobile=document.getElementById('admissionMobile').value;
+  var city=document.getElementById('admissionCity').value;
+  var stream=document.getElementById('admissionStream').value;
+
+  if(!name || !mobile || !city || !stream){
+    alert('Please fill all details.');
+    return;
+  }
+
+  var message =
+    'Admission Enquiry - CPRG Agriculture College' +
+    '\n\nStudent Name: ' + name +
+    '\nMobile: ' + mobile +
+    '\nVillage / City: ' + city +
+    '\n12th Stream: ' + stream;
+
+  window.open(
+    'https://wa.me/918094347590?text=' + encodeURIComponent(message),
+    '_blank'
+  );
+}
+</script>
   <div class="topbar">
     <div class="container">
       <div>📍 Nohar–Hisar Bypass Road, Bhadra, Hanumangarh, Rajasthan – 335501</div>

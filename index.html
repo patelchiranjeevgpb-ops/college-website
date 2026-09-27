@@ -417,7 +417,7 @@ function submitAdmissionEnquiry(){
 <a href="javascript:void(0)" onclick="openFacilityPopup('Campus Environment','A green campus atmosphere supports a positive and engaging learning experience.')">Campus Environment</a>
   </div>
 </div>
-        <div class="student-dropdown" style="position:relative;">   <a href="#student-section" style="color:white;padding:13px 14px;font-weight:800;display:block;">     Student Section ▼   </a>    <div class="student-dropdown-menu">     <a href="#student-section">Syllabus</a>     <a href="#department-notes">Department-wise Notes</a>     <a href="#notice-board">Notice Board</a>     <a href="#toppers">Toppers</a>     <a href="#downloads">Downloads</a>     <a href="javascript:void(0)" onclick="openFacilityPopup('छात्रवृत्तियाँ / Scholarships',` <div style='line-height:1.8;'> <p>महाविद्यालय में अध्ययनरत पात्र विद्यार्थियों को उनकी योग्यता एवं निर्धारित पात्रता के अनुसार राजस्थान सरकार के विभिन्न विभागों द्वारा संचालित छात्रवृत्ति एवं प्रोत्साहन योजनाओं का लाभ प्राप्त हो सकता है।</p>  <p><b>1. समाज कल्याण विभाग</b><br> पिछड़ा वर्ग, अनुसूचित जाति एवं अनुसूचित जनजाति के पात्र विद्यार्थियों के लिए छात्रवृत्ति योजनाएँ संचालित की जाती हैं।</p>  <p><b>2. अल्पसंख्यक विभाग</b><br> पात्र विद्यार्थियों के लिए विभिन्न छात्रवृत्ति योजनाएँ संचालित की जाती हैं।</p>  <p><b>3. कृषि छात्राओं के लिए प्रोत्साहन राशि</b><br> कृषि विषय में B.Sc. (Agriculture) में अध्ययनरत पात्र छात्राओं को ₹25,000 प्रति वर्ष प्रोत्साहन राशि प्रदान की जाती है।</p>  <p>सभी योजनाओं की पात्रता, आवेदन तिथि एवं आवश्यक दस्तावेजों की जानकारी समय-समय पर संबंधित सरकारी पोर्टल एवं महाविद्यालय के सूचना-पट्ट के माध्यम से उपलब्ध कराई जाती है।</p>  <p><b>छात्रवृत्ति प्रभारी:</b> ____________</p> </div> `)">Scholarships</a>   </div> </div>
+        <div class="student-dropdown" style="position:relative;">   <a href="#student-section" style="color:white;padding:13px 14px;font-weight:800;display:block;">     Student Section ▼   </a>    <div class="student-dropdown-menu">     <a href="#student-section">Syllabus</a>     <a href="#department-notes">Department-wise Notes</a>     <a href="#notice-board">Notice Board</a>     <a href="javascript:void(0)" onclick="openToppers()">Toppers</a>     <a href="#downloads">Downloads</a>     <a href="javascript:void(0)" onclick="openFacilityPopup('छात्रवृत्तियाँ / Scholarships',` <div style='line-height:1.8;'> <p>महाविद्यालय में अध्ययनरत पात्र विद्यार्थियों को उनकी योग्यता एवं निर्धारित पात्रता के अनुसार राजस्थान सरकार के विभिन्न विभागों द्वारा संचालित छात्रवृत्ति एवं प्रोत्साहन योजनाओं का लाभ प्राप्त हो सकता है।</p>  <p><b>1. समाज कल्याण विभाग</b><br> पिछड़ा वर्ग, अनुसूचित जाति एवं अनुसूचित जनजाति के पात्र विद्यार्थियों के लिए छात्रवृत्ति योजनाएँ संचालित की जाती हैं।</p>  <p><b>2. अल्पसंख्यक विभाग</b><br> पात्र विद्यार्थियों के लिए विभिन्न छात्रवृत्ति योजनाएँ संचालित की जाती हैं।</p>  <p><b>3. कृषि छात्राओं के लिए प्रोत्साहन राशि</b><br> कृषि विषय में B.Sc. (Agriculture) में अध्ययनरत पात्र छात्राओं को ₹25,000 प्रति वर्ष प्रोत्साहन राशि प्रदान की जाती है।</p>  <p>सभी योजनाओं की पात्रता, आवेदन तिथि एवं आवश्यक दस्तावेजों की जानकारी समय-समय पर संबंधित सरकारी पोर्टल एवं महाविद्यालय के सूचना-पट्ट के माध्यम से उपलब्ध कराई जाती है।</p>  <p><b>छात्रवृत्ति प्रभारी:</b> ____________</p> </div> `)">Scholarships</a>   </div> </div>
   <a href="#leadership" style="color:white;padding:13px 14px;font-weight:800;">Leadership</a>
   <a href="#gallery" style="color:white;padding:13px 14px;font-weight:800;">Gallery</a>
   <a href="#contact" style="color:white;padding:13px 14px;font-weight:800;">Contact</a>
@@ -1016,9 +1016,59 @@ function showLabDetail(lab){
     openFacilityPopup(item.title, item.text);
   }
 }
-}
+  
 function closeFacilityPopup(){
   document.getElementById('facilityPopup').style.display = 'none';
+}
+function openToppers(){
+  openFacilityPopup('Batch-wise Toppers', `
+    <div style="display:grid;gap:10px;">
+      <button onclick="showTopperBatch('2018-22')" style="padding:12px;text-align:left;cursor:pointer;">2018–22 Batch</button>
+      <button onclick="showTopperBatch('2019-23')" style="padding:12px;text-align:left;cursor:pointer;">2019–23 Batch</button>
+      <button onclick="showTopperBatch('2020-24')" style="padding:12px;text-align:left;cursor:pointer;">2020–24 Batch</button>
+      <button onclick="showTopperBatch('2021-25')" style="padding:12px;text-align:left;cursor:pointer;">2021–25 Batch</button>
+      <button onclick="showTopperBatch('2022-26')" style="padding:12px;text-align:left;cursor:pointer;">2022–26 Batch</button>
+      <button onclick="showTopperBatch('2023-27')" style="padding:12px;text-align:left;cursor:pointer;">2023–27 Batch</button>
+      <button onclick="showTopperBatch('2024-28')" style="padding:12px;text-align:left;cursor:pointer;">2024–28 Batch</button>
+      <button onclick="showTopperBatch('2025-29')" style="padding:12px;text-align:left;cursor:pointer;">2025–29 Batch</button>
+      <button onclick="showTopperBatch('2026-30')" style="padding:12px;text-align:left;cursor:pointer;">2026–30 Batch</button>
+    </div>
+  `);
+}
+function showTopperBatch(batch){
+
+  if(batch === '2018-22'){
+    openFacilityPopup('2018–22 Batch – Top 25 Students', `
+      <div style="line-height:2;">
+        <b>1.</b> Student Name – Percentage<br>
+        <b>2.</b> Student Name – Percentage<br>
+        <b>3.</b> Student Name – Percentage<br>
+        <b>4.</b> Student Name – Percentage<br>
+        <b>5.</b> Student Name – Percentage<br>
+        <b>6.</b> Student Name – Percentage<br>
+        <b>7.</b> Student Name – Percentage<br>
+        <b>8.</b> Student Name – Percentage<br>
+        <b>9.</b> Student Name – Percentage<br>
+        <b>10.</b> Student Name – Percentage<br>
+        <b>11.</b> Student Name – Percentage<br>
+        <b>12.</b> Student Name – Percentage<br>
+        <b>13.</b> Student Name – Percentage<br>
+        <b>14.</b> Student Name – Percentage<br>
+        <b>15.</b> Student Name – Percentage<br>
+        <b>16.</b> Student Name – Percentage<br>
+        <b>17.</b> Student Name – Percentage<br>
+        <b>18.</b> Student Name – Percentage<br>
+        <b>19.</b> Student Name – Percentage<br>
+        <b>20.</b> Student Name – Percentage<br>
+        <b>21.</b> Student Name – Percentage<br>
+        <b>22.</b> Student Name – Percentage<br>
+        <b>23.</b> Student Name – Percentage<br>
+        <b>24.</b> Student Name – Percentage<br>
+        <b>25.</b> Student Name – Percentage
+      </div>
+    `);
+  }
+
 }
 </script>
 <!-- FACILITY POPUP END -->

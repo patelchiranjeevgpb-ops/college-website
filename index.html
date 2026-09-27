@@ -951,7 +951,7 @@ Choudhary Parma Ram Godara Agriculture College, Bhadra is committed to quality a
 
     <h2 id="facilityPopupTitle" style="color:#0c5c38;margin:0 35px 15px 0;"></h2>
 
-    <div id="facilityPopupContent" style="line-height:1.7;color:#444;"></div>
+    <div id="facilityPopupContent" style="line-height:1.7;color:#444;max-height:65vh;overflow-y:auto;padding-right:8px;"></div>
 
   </div>
 </div>
@@ -1018,10 +1018,14 @@ function showLabDetail(lab){
     }
   };
 
-  const item = labs[lab];
-  if(item){
-    openFacilityPopup(item.title, item.text);
-  }
+ const item = labs[lab];
+if(item){
+  openFacilityPopup(
+    item.title,
+    '<button onclick="openLaboratories()" style="margin-bottom:15px;padding:8px 14px;cursor:pointer;font-weight:700;">← Back to Laboratories</button><br>' +
+    item.text
+  );
+}
 }
 
 function openToppers(){
@@ -1046,9 +1050,11 @@ function showTopperBatch(batch){
     students += '<b>' + i + '.</b> Student Name - Percentage<br>';
   }
 
-  openFacilityPopup(batch + ' Batch - Top 25 Students',
-    '<div style="line-height:2;">' + students + '</div>'
-  );
+ openFacilityPopup(
+  batch + ' Batch - Top 25 Students',
+  '<button onclick="openToppers()" style="margin-bottom:15px;padding:8px 14px;cursor:pointer;font-weight:700;">← Back to Batch-wise Toppers</button><br>' +
+  '<div style="line-height:2;">' + students + '</div>'
+);
 }
 
 function openScholarships(){

@@ -428,8 +428,7 @@ function submitAdmissionEnquiry(){
 
     <h3>8. कृषि प्रसार शिक्षा प्रयोगशाला (Agricultural Extension Laboratory)</h3>
     <p>यहाँ कृषि संचार, ग्रामीण विकास, प्रसार शिक्षण विधियों, संचार साधनों एवं कृषक शिक्षा से संबंधित गतिविधियों का व्यावहारिक प्रशिक्षण दिया जाता है।</p>
-  </div>
-`)">Laboratories</a>
+<a href="javascript:void(0)" onclick="openLaboratories()">Laboratories</a>
 <a href="javascript:void(0)" onclick="openFacilityPopup('Library','Academic resources, textbooks and reference materials support students in learning and examination preparation.')">Library</a>
 
 <a href="javascript:void(0)" onclick="openFacilityPopup('Field Exposure','Students observe crops, field conditions and agricultural practices through practical sessions.')">Field Exposure</a>
@@ -988,7 +987,61 @@ function openFacilityPopup(title, content){
   document.getElementById('facilityPopupContent').innerHTML = content;
   document.getElementById('facilityPopup').style.display = 'flex';
 }
+function openLaboratories(){
+  openFacilityPopup('Laboratories', `
+    <div style="display:grid;gap:10px;">
+      <button onclick="showLabDetail('agronomy')" style="padding:12px;text-align:left;cursor:pointer;">1. सस्य विज्ञान प्रयोगशाला (Agronomy Laboratory)</button>
+      <button onclick="showLabDetail('gpb')" style="padding:12px;text-align:left;cursor:pointer;">2. आनुवंशिकी एवं पादप प्रजनन प्रयोगशाला (Genetics & Plant Breeding Laboratory)</button>
+      <button onclick="showLabDetail('soil')" style="padding:12px;text-align:left;cursor:pointer;">3. मृदा विज्ञान एवं कृषि रसायन प्रयोगशाला (Soil Science & Agricultural Chemistry Laboratory)</button>
+      <button onclick="showLabDetail('horticulture')" style="padding:12px;text-align:left;cursor:pointer;">4. उद्यान विज्ञान प्रयोगशाला (Horticulture Laboratory)</button>
+      <button onclick="showLabDetail('entomology')" style="padding:12px;text-align:left;cursor:pointer;">5. कीट विज्ञान प्रयोगशाला (Entomology Laboratory)</button>
+      <button onclick="showLabDetail('pathology')" style="padding:12px;text-align:left;cursor:pointer;">6. पादप रोग विज्ञान प्रयोगशाला (Plant Pathology Laboratory)</button>
+      <button onclick="showLabDetail('engineering')" style="padding:12px;text-align:left;cursor:pointer;">7. कृषि अभियांत्रिकी प्रयोगशाला (Agricultural Engineering Laboratory)</button>
+      <button onclick="showLabDetail('extension')" style="padding:12px;text-align:left;cursor:pointer;">8. कृषि प्रसार शिक्षा प्रयोगशाला (Agricultural Extension Laboratory)</button>
+    </div>
+  `);
+function showLabDetail(lab){
+  const labs = {
+    agronomy: {
+      title: 'सस्य विज्ञान प्रयोगशाला (Agronomy Laboratory)',
+      text: 'इस प्रयोगशाला में विद्यार्थियों को फसल उत्पादन, बीज एवं उर्वरक की मात्रा की गणना, खरपतवार पहचान, सिंचाई प्रबंधन तथा विभिन्न सस्य क्रियाओं का व्यावहारिक ज्ञान दिया जाता है।'
+    },
+    gpb: {
+      title: 'आनुवंशिकी एवं पादप प्रजनन प्रयोगशाला (Genetics & Plant Breeding Laboratory)',
+      text: 'इस प्रयोगशाला में आनुवंशिकी, पादप प्रजनन, कोशिका विज्ञान तथा फसल सुधार से संबंधित व्यावहारिक अध्ययन कराया जाता है। विद्यार्थियों को मेंडल के सिद्धांत, गुणसूत्र अध्ययन, चयन एवं संकरण तकनीकों का प्रशिक्षण दिया जाता है।'
+    },
+    soil: {
+      title: 'मृदा विज्ञान एवं कृषि रसायन प्रयोगशाला (Soil Science & Agricultural Chemistry Laboratory)',
+      text: 'यहाँ विद्यार्थियों को मृदा एवं जल परीक्षण, मृदा उर्वरता, मृदा नमूना संग्रह, pH तथा विद्युत चालकता (EC) आदि के परीक्षण का व्यावहारिक प्रशिक्षण दिया जाता है।'
+    },
+    horticulture: {
+      title: 'उद्यान विज्ञान प्रयोगशाला (Horticulture Laboratory)',
+      text: 'विद्यार्थियों को फल, सब्जी एवं पुष्प फसलों की पहचान, पौध प्रवर्धन, नर्सरी प्रबंधन तथा उद्यान प्रबंधन की विभिन्न तकनीकों का व्यावहारिक प्रशिक्षण दिया जाता है।'
+    },
+    entomology: {
+      title: 'कीट विज्ञान प्रयोगशाला (Entomology Laboratory)',
+      text: 'यहाँ विद्यार्थियों को कीटों की पहचान, संग्रह एवं संरक्षण, लाभदायक एवं हानिकारक कीटों तथा प्रमुख फसल कीटों के प्रबंधन का व्यावहारिक ज्ञान दिया जाता है।'
+    },
+    pathology: {
+      title: 'पादप रोग विज्ञान प्रयोगशाला (Plant Pathology Laboratory)',
+      text: 'इस प्रयोगशाला में प्रमुख पादप रोगों, उनके लक्षणों, रोगकारकों तथा रोग प्रबंधन का व्यावहारिक अध्ययन एवं रोगग्रस्त नमूनों की पहचान कराई जाती है।'
+    },
+    engineering: {
+      title: 'कृषि अभियांत्रिकी प्रयोगशाला (Agricultural Engineering Laboratory)',
+      text: 'विद्यार्थियों को कृषि यंत्रों, कृषि उपकरणों, सिंचाई उपकरणों तथा उनकी कार्यप्रणाली, उपयोग एवं सामान्य रखरखाव का व्यावहारिक ज्ञान दिया जाता है।'
+    },
+    extension: {
+      title: 'कृषि प्रसार शिक्षा प्रयोगशाला (Agricultural Extension Laboratory)',
+      text: 'यहाँ कृषि संचार, ग्रामीण विकास, प्रसार शिक्षण विधियों, संचार साधनों एवं कृषक शिक्षा से संबंधित गतिविधियों का व्यावहारिक प्रशिक्षण दिया जाता है।'
+    }
+  };
 
+  const item = labs[lab];
+  if(item){
+    openFacilityPopup(item.title, item.text);
+  }
+}
+}
 function closeFacilityPopup(){
   document.getElementById('facilityPopup').style.display = 'none';
 }

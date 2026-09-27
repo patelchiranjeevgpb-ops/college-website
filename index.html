@@ -401,14 +401,21 @@ function submitAdmissionEnquiry(){
   </a>
 
   <div class="student-dropdown-menu">
-    <a href="#facilities">Practical Learning</a>
-    <a href="#laboratories">Laboratories</a>
-    <a href="#library">Library</a>
-    <a href="#field-exposure">Field Exposure</a>
-    <a href="#seminars">Seminars</a>
-    <a href="#sports">Sports</a>
-    <a href="#student-recognition">Student Recognition</a>
-    <a href="#campus-environment">Campus Environment</a>
+    <a href="javascript:void(0)" onclick="openFacilityPopup('Practical Learning','Hands-on laboratory and practical activities support concept-based agricultural learning.')">Practical Learning</a>
+
+<a href="javascript:void(0)" onclick="openFacilityPopup('Laboratories','Well-equipped laboratories support practical learning, experiments and skill development in agricultural sciences.')">Laboratories</a>
+
+<a href="javascript:void(0)" onclick="openFacilityPopup('Library','Academic resources, textbooks and reference materials support students in learning and examination preparation.')">Library</a>
+
+<a href="javascript:void(0)" onclick="openFacilityPopup('Field Exposure','Students observe crops, field conditions and agricultural practices through practical sessions.')">Field Exposure</a>
+
+<a href="javascript:void(0)" onclick="openFacilityPopup('Seminars','Guest lectures, seminars and academic interactions help students broaden their perspective.')">Seminars</a>
+
+<a href="javascript:void(0)" onclick="openFacilityPopup('Sports','Sports and games encourage fitness, teamwork, leadership and healthy competition.')">Sports</a>
+
+<a href="javascript:void(0)" onclick="openFacilityPopup('Student Recognition','Academic and co-curricular achievements of students are celebrated and recognized.')">Student Recognition</a>
+
+<a href="javascript:void(0)" onclick="openFacilityPopup('Campus Environment','A green campus atmosphere supports a positive and engaging learning experience.')">Campus Environment</a>
   </div>
 </div>
         <div class="student-dropdown" style="position:relative;">   <a href="#student-section" style="color:white;padding:13px 14px;font-weight:800;display:block;">     Student Section ▼   </a>    <div class="student-dropdown-menu">     <a href="#student-section">Syllabus</a>     <a href="#department-notes">Department-wise Notes</a>     <a href="#notice-board">Notice Board</a>     <a href="#toppers">Toppers</a>     <a href="#downloads">Downloads</a>     <a href="#scholarships">Scholarships</a>   </div> </div>
@@ -934,5 +941,34 @@ Choudhary Parma Ram Godara Agriculture College, Bhadra is committed to quality a
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-</body>
+<!-- FACILITY POPUP START -->
+<div id="facilityPopup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:99999;align-items:center;justify-content:center;padding:20px;">
+
+  <div style="background:white;width:100%;max-width:600px;border-radius:18px;padding:28px;position:relative;box-shadow:0 15px 50px rgba(0,0,0,.3);">
+
+    <button onclick="closeFacilityPopup()"
+      style="position:absolute;right:15px;top:10px;border:0;background:none;font-size:30px;cursor:pointer;">
+      &times;
+    </button>
+
+    <h2 id="facilityPopupTitle" style="color:#0c5c38;margin:0 35px 15px 0;"></h2>
+
+    <div id="facilityPopupContent" style="line-height:1.7;color:#444;"></div>
+
+  </div>
+</div>
+
+<script>
+function openFacilityPopup(title, content){
+  document.getElementById('facilityPopupTitle').innerHTML = title;
+  document.getElementById('facilityPopupContent').innerHTML = content;
+  document.getElementById('facilityPopup').style.display = 'flex';
+}
+
+function closeFacilityPopup(){
+  document.getElementById('facilityPopup').style.display = 'none';
+}
+</script>
+<!-- FACILITY POPUP END -->
+      </body>
 </html>

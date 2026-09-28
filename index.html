@@ -404,7 +404,7 @@ function submitAdmissionEnquiry(){
     <a href="javascript:void(0)" onclick="openFacilityPopup('Practical Learning','Hands-on laboratory and practical activities support concept-based agricultural learning.')">Practical Learning</a>
 
 <a href="javascript:void(0)" onclick="openLaboratories()">Laboratories</a>
-<a href="javascript:void(0)" onclick="openFacilityPopup('Library',`<div style='display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px;'><img src='assets/LIBRARY 1.jpeg' style='width:100%;height:190px;object-fit:cover;border-radius:12px;'><img src='assets/LIBRARY.jpeg' style='width:100%;height:190px;object-fit:cover;border-radius:12px;'></div><p>Our college library provides academic resources, textbooks and reference materials to support students in learning, practical studies and examination preparation.</p>`)">Library</a>
+<a href="javascript:void(0)" onclick="openLibrary()">Library</a>
 <a href="javascript:void(0)" onclick="openFacilityPopup('Field Exposure','Students observe crops, field conditions and agricultural practices through practical sessions.')">Field Exposure</a>
 
 <a href="javascript:void(0)" onclick="openFacilityPopup('Seminars','Guest lectures, seminars and academic interactions help students broaden their perspective.')">Seminars</a>
@@ -888,6 +888,16 @@ function closeFacilityPopup(){
   document.getElementById('facilityPopup').style.display = 'none';
 }
 
+  function openLibrary(){
+  openFacilityPopup(
+    'Library',
+    `<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px;">
+      <img src="assets/LIBRARY 1.jpeg" style="width:100%;height:190px;object-fit:cover;border-radius:12px;">
+      <img src="assets/LIBRARY.jpeg" style="width:100%;height:190px;object-fit:cover;border-radius:12px;">
+    </div>
+    <p>Our college library provides academic resources, textbooks and reference materials to support students in learning, practical studies and examination preparation.</p>`
+  );
+}
 function openLaboratories(){
   openFacilityPopup('Laboratories', `
     <div style="display:grid;gap:10px;">

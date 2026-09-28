@@ -404,8 +404,7 @@ function submitAdmissionEnquiry(){
     <a href="javascript:void(0)" onclick="openFacilityPopup('Practical Learning','Hands-on laboratory and practical activities support concept-based agricultural learning.')">Practical Learning</a>
 
 <a href="javascript:void(0)" onclick="openLaboratories()">Laboratories</a>
-<a href="javascript:void(0)" onclick="openFacilityPopup('Library','Academic resources, textbooks and reference materials support students in learning and examination preparation.')">Library</a>
-
+<a href="javascript:void(0)" onclick="openFacilityPopup('Library',`<div style='display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px;'><img src='assets/LIBRARY 1.jpeg' style='width:100%;height:190px;object-fit:cover;border-radius:12px;'><img src='assets/LIBRARY.jpeg' style='width:100%;height:190px;object-fit:cover;border-radius:12px;'></div><p>Our college library provides academic resources, textbooks and reference materials to support students in learning, practical studies and examination preparation.</p>`)">Library</a>
 <a href="javascript:void(0)" onclick="openFacilityPopup('Field Exposure','Students observe crops, field conditions and agricultural practices through practical sessions.')">Field Exposure</a>
 
 <a href="javascript:void(0)" onclick="openFacilityPopup('Seminars','Guest lectures, seminars and academic interactions help students broaden their perspective.')">Seminars</a>
@@ -900,6 +899,8 @@ function openLaboratories(){
       <button onclick="showLabDetail('pathology')" style="padding:12px;text-align:left;cursor:pointer;">6. पादप रोग विज्ञान प्रयोगशाला (Plant Pathology Laboratory)</button>
       <button onclick="showLabDetail('engineering')" style="padding:12px;text-align:left;cursor:pointer;">7. कृषि अभियांत्रिकी प्रयोगशाला (Agricultural Engineering Laboratory)</button>
       <button onclick="showLabDetail('extension')" style="padding:12px;text-align:left;cursor:pointer;">8. कृषि प्रसार शिक्षा प्रयोगशाला (Agricultural Extension Laboratory)</button>
+    <button onclick="showLabDetail('biotechnology')" style="padding:12px;text-align:left;cursor:pointer;">9. जैव प्रौद्योगिकी प्रयोगशाला (Biotechnology Laboratory)</button>
+<button onclick="showLabDetail('computer')" style="padding:12px;text-align:left;cursor:pointer;">10. कंप्यूटर प्रयोगशाला (Computer Laboratory)</button>
     </div>
   `);
 }
@@ -938,14 +939,52 @@ function showLabDetail(lab){
       title: 'कृषि प्रसार शिक्षा प्रयोगशाला (Agricultural Extension Laboratory)',
       text: 'यहाँ कृषि संचार, ग्रामीण विकास, प्रसार शिक्षण विधियों एवं कृषक शिक्षा से संबंधित गतिविधियों का व्यावहारिक प्रशिक्षण दिया जाता है।'
     }
+  biotechnology: {
+  title: 'जैव प्रौद्योगिकी प्रयोगशाला (Biotechnology Laboratory)',
+  text: 'इस प्रयोगशाला में विद्यार्थियों को जैव प्रौद्योगिकी, ऊतक संवर्धन, आणविक जीवविज्ञान तथा कृषि जैव प्रौद्योगिकी से संबंधित व्यावहारिक अध्ययन कराया जाता है।'
+},
+computer: {
+  title: 'कंप्यूटर प्रयोगशाला (Computer Laboratory)',
+  text: 'इस प्रयोगशाला में विद्यार्थियों को कंप्यूटर के व्यावहारिक उपयोग, कृषि में सूचना प्रौद्योगिकी, इंटरनेट तथा डिजिटल शिक्षण संसाधनों का प्रशिक्षण दिया जाता है।'
+}
   };
 
  const item = labs[lab];
+
+const labPhotos = {
+  agronomy: ['AGRO 1.jpeg', 'AGRO 2.jpeg'],
+  soil: ['SOIL 1.jpeg', 'SOIL 2.jpeg'],
+  horticulture: ['HORT 1.jpeg'],
+  entomology: ['ENTO 1.jpeg', 'ENTO 2.jpeg'],
+  pathology: ['PATHO 1.jpeg'],
+  engineering: ['ENG 1.jpeg', 'ENG 2.jpeg'],
+  extension: ['EXT 1.jpeg', 'EXT 2.jpeg'],
+  biotechnology: ['BIO 1.jpeg', 'BIO 2.jpeg'],
+  computer: ['COMP 1.jpeg'],
+  library: ['LIBRARY 1.jpeg', 'LIBRARY.jpeg']
+};
+
 if(item){
+
+  let photos = '';
+
+  if(labPhotos[lab]){
+    photos = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:15px 0;">';
+
+    labPhotos[lab].forEach(function(photo){
+      photos +=
+        '<img src="assets/' + encodeURIComponent(photo) + '" alt="' + item.title + '" ' +
+        'style="width:100%;height:190px;object-fit:cover;border-radius:12px;border:1px solid #ddd;">';
+    });
+
+    photos += '</div>';
+  }
+
   openFacilityPopup(
     item.title,
-    '<button onclick="openLaboratories()" style="margin-bottom:15px;padding:8px 14px;cursor:pointer;font-weight:700;">← Back to Laboratories</button><br>' +
-    item.text
+    '<button onclick="openLaboratories()" style="margin-bottom:15px;padding:8px 14px;cursor:pointer;font-weight:700;">← Back to Laboratories</button>' +
+    photos +
+    '<div style="margin-top:12px;">' + item.text + '</div>'
   );
 }
 }

@@ -953,30 +953,262 @@ if(item){
 function openToppers(){
   openFacilityPopup('Batch-wise Toppers', `
     <div style="display:grid;gap:10px;">
-      <button onclick="showTopperBatch('2018-22')" style="padding:12px;text-align:left;cursor:pointer;">2018–22 Batch</button>
-      <button onclick="showTopperBatch('2019-23')" style="padding:12px;text-align:left;cursor:pointer;">2019–23 Batch</button>
-      <button onclick="showTopperBatch('2020-24')" style="padding:12px;text-align:left;cursor:pointer;">2020–24 Batch</button>
-      <button onclick="showTopperBatch('2021-25')" style="padding:12px;text-align:left;cursor:pointer;">2021–25 Batch</button>
-      <button onclick="showTopperBatch('2022-26')" style="padding:12px;text-align:left;cursor:pointer;">2022–26 Batch</button>
-      <button onclick="showTopperBatch('2023-27')" style="padding:12px;text-align:left;cursor:pointer;">2023–27 Batch</button>
-      <button onclick="showTopperBatch('2024-28')" style="padding:12px;text-align:left;cursor:pointer;">2024–28 Batch</button>
-      <button onclick="showTopperBatch('2025-29')" style="padding:12px;text-align:left;cursor:pointer;">2025–29 Batch</button>
-      <button onclick="showTopperBatch('2026-30')" style="padding:12px;text-align:left;cursor:pointer;">2026–30 Batch</button>
+<button onclick="showTopperBatch('2025-26')" style="padding:12px;text-align:left;cursor:pointer;">2025-26 Passout Session</button>
+<button onclick="showTopperBatch('2024-25')" style="padding:12px;text-align:left;cursor:pointer;">2024-25 Passout Session</button>
+<button onclick="showTopperBatch('2023-24')" style="padding:12px;text-align:left;cursor:pointer;">2023-24 Passout Session</button>
+<button onclick="showTopperBatch('2022-23')" style="padding:12px;text-align:left;cursor:pointer;">2022-23 Passout Session</button>
+<button onclick="showTopperBatch('2021-22')" style="padding:12px;text-align:left;cursor:pointer;">2021-22 Passout Session</button>
+<button onclick="showTopperBatch('2020-21')" style="padding:12px;text-align:left;cursor:pointer;">2020-21 Passout Session</button>
+<button onclick="showTopperBatch('2019-20')" style="padding:12px;text-align:left;cursor:pointer;">2019-20 Passout Session</button>
     </div>
   `);
 }
 
 function showTopperBatch(batch){
-  let students = '';
-  for(let i = 1; i <= 25; i++){
-    students += '<b>' + i + '.</b> Student Name - Percentage<br>';
-  }
 
- openFacilityPopup(
-  batch + ' Batch - Top 25 Students',
-  '<button onclick="openToppers()" style="margin-bottom:15px;padding:8px 14px;cursor:pointer;font-weight:700;">← Back to Batch-wise Toppers</button><br>' +
-  '<div style="line-height:2;">' + students + '</div>'
-);
+  const topperData = {
+
+    '2025-26': [
+      ['Priya','86.30%'],
+      ['Karan Yudh Veer','84.00%'],
+      ['Sunita Poonia','83.80%'],
+      ['Hansraj','83.70%'],
+      ['Nakita','83.60%'],
+      ['Manisha','83.10%'],
+      ['Balram','82.90%'],
+      ['Lokesh','81.70%'],
+      ['Jeeshan Khan','80.30%'],
+      ['Sarita','80.30%'],
+      ['Kalpana','79.70%'],
+      ['Pooja','79.20%'],
+      ['Poonam','79.20%'],
+      ['Mukesh Kumar','78.40%'],
+      ['Rohit Kumar','77.70%'],
+      ['Mahesh Mandia','76.80%'],
+      ['Lakshit Rathore','76.60%'],
+      ['Gautam','75.90%'],
+      ['Vikash','75.90%'],
+      ['Wasim Khan','75.10%'],
+      ['Lokesh','74.90%'],
+      ['Ajay Meena','74.80%'],
+      ['Abhishek Kumar','74.00%'],
+      ['Lavnish Birt','73.80%'],
+      ['Ramji Lal Yadav','73.60%'],
+      ['Bablu Yadav','73.30%'],
+      ['Bhanupratap','73.20%'],
+      ['Ajay Beniwal','73.10%'],
+      ['Akash Sai','72.90%'],
+      ['Sohail Khan','72.90%'],
+      ['Ashish','72.70%'],
+      ['Mahendra Choudhary','72.50%']
+    ],
+
+    '2024-25': [
+      ['Rekha','82.10%'],
+      ['Divyanshi','81.70%'],
+      ['Sahil Khan','80.10%'],
+      ['Pradeep Kaushik','79.80%'],
+      ['Deepak Malav','77.30%'],
+      ['Dipanshu Pareek','77.00%'],
+      ['Vikash Kaswan','76.40%'],
+      ['Gajendra Sewda','76.30%'],
+      ['Saviti','75.90%'],
+      ['Murli Dhaker','75.60%'],
+      ['Ajay Kumar','75.50%'],
+      ['Navratan Jat','74.90%'],
+      ['Shoukin','74.50%'],
+      ['Ishwardayal Yogi','74.20%'],
+      ['Ekata','74.10%'],
+      ['Anuj','74.00%'],
+      ['Daulat Singh','73.90%'],
+      ['Rahul Netar','73.00%'],
+      ['Anuj','72.50%'],
+      ['Vikram','72.20%'],
+      ['Pratibha','71.50%'],
+      ['Naresh Kumar','71.20%'],
+      ['Sanjiv','71.20%'],
+      ['Vishnu Suman','71.20%'],
+      ['Mohit','70.70%'],
+      ['Aman Soni','70.60%'],
+      ['Harsh Saini','70.50%'],
+      ['Sumit Kumar','70.50%'],
+      ['Manjeet','70.40%'],
+      ['Jyoti','70.30%'],
+      ['Deepak Kumawat','70.10%'],
+      ['Yogesh','70.10%']
+    ],
+
+    '2023-24': [
+      ['Garima Choudhary','80.80%'],
+      ['Chandrakala','79.80%'],
+      ['Poonam Kumari','78.50%'],
+      ['Asha','77.50%'],
+      ['Pawan Swami','77.50%'],
+      ['Ravindra Singh','77.30%'],
+      ['Praveen Kumar','75.90%'],
+      ['Renuka','75.80%'],
+      ['Ankit Chandora','75.40%'],
+      ['Mohit','75.30%'],
+      ['Savita','75.30%'],
+      ['Yogesh Choudhary','74.80%'],
+      ['Netram','74.50%'],
+      ['Payal','74.00%'],
+      ['Narender Kumar','73.40%'],
+      ['Jatin Thakan','72.50%'],
+      ['Rupesh','72.50%'],
+      ['Mukesh','72.40%'],
+      ['Azad','72.10%'],
+      ['Govind Kulmi','71.80%'],
+      ['Vikesh','71.70%'],
+      ['Narendra','71.50%'],
+      ['Priyanka','71.50%'],
+      ['Chhotu Ram Meena','71.40%'],
+      ['Ankit Kayla','71.20%'],
+      ['Sonu','71.00%'],
+      ['Sahil','70.90%'],
+      ['Himanshu','70.80%'],
+      ['Himalya','70.50%'],
+      ['Nishant','70.40%'],
+      ['Dharampal','70.00%'],
+      ['Priyanka Jakhar','70.00%']
+    ],
+
+    '2022-23': [
+      ['Poonam Swami','82.00%'],
+      ['Naina Negi','79.50%'],
+      ['Pooja','78.40%'],
+      ['Payal Sharma','78.30%'],
+      ['Muskan','78.10%'],
+      ['Yogesh Kumar','77.80%'],
+      ['Payal','77.70%'],
+      ['Daud Khan','76.30%'],
+      ['Anita','75.70%'],
+      ['Gajendra Kumar','75.40%'],
+      ['Anju Kumari','75.10%'],
+      ['Dalip Kumar','74.50%'],
+      ['Jagatpal','74.50%'],
+      ['Sonu','74.30%'],
+      ['Ghanshyam Yadav','73.60%'],
+      ['Pooja','73.20%'],
+      ['Tarun Sharma','73.10%'],
+      ['Sandeep Kumar','73.00%'],
+      ['Akansha','72.60%'],
+      ['Vinod Kumari','72.30%'],
+      ['Govind Kumar','72.10%'],
+      ['Arjun','72.00%'],
+      ['Pardeep Kumar','71.60%'],
+      ['Baljindar Singh','71.40%'],
+      ['Monika','71.40%'],
+      ['Vikash','71.40%'],
+      ['Parul','71.20%'],
+      ['Rachana Jyani','70.90%'],
+      ['Yaswant Beniwal','70.80%']
+    ],
+
+    '2021-22': [
+      ['Aman Kumar','83.50%'],
+      ['Bharti','77.60%'],
+      ['Preeti','77.10%'],
+      ['Shivani Jakhar','76.60%'],
+      ['Monika Sheoran','76.40%'],
+      ['Vishal Choudhary','76.40%'],
+      ['Renu','75.80%'],
+      ['Sudesh Nain','75.80%'],
+      ['Ganga Ram','75.50%'],
+      ['Monika','74.60%'],
+      ['Rahul Gora','74.00%'],
+      ['Priyanka Kumari','73.60%'],
+      ['Anita Choudhary','72.80%'],
+      ['Kavita Godara','72.60%'],
+      ['Palvi Sharma','72.60%'],
+      ['Ankit Sahu','72.40%']
+    ],
+
+    '2020-21': [
+      ['Sangeeta','80.50%'],
+      ['Vishwanshu Yogi','76.60%'],
+      ['Manoj Soni','76.00%'],
+      ['Gagan Singh','73.60%'],
+      ['Sakshi Verma','73.30%'],
+      ['Dinesh Kumar','72.90%'],
+      ['Vikram Singh','72.90%'],
+      ['Chandra Prakash','72.60%'],
+      ['Yuvraj Singh','72.30%'],
+      ['Dharamveer','71.90%'],
+      ['Dinesh Kumar','71.70%'],
+      ['Bharti','71.40%'],
+      ['Suchitra','71.20%'],
+      ['Renu','71.10%'],
+      ['Jitendra Kumawat','70.90%'],
+      ['Majeet','70.90%'],
+      ['Raman Goswami','70.90%'],
+      ['Ajay Raj','70.70%'],
+      ['Jitendra Khaliya','70.40%'],
+      ['Vikash','70.30%'],
+      ['Manisha Chalka','70.20%'],
+      ['Pradeep Kumar','70.00%'],
+      ['Ravina Kumari','70.00%'],
+      ['Sanjiv','70.00%']
+    ],
+
+    '2019-20': [
+      ['Kavita Beniwal','81.50%'],
+      ['Khushboo','76.70%'],
+      ['Ankit Kumar','74.70%'],
+      ['Pinky','74.20%'],
+      ['Shantanu Kumar','73.60%'],
+      ['Monika','72.50%'],
+      ['Kavita Kumari','72.20%'],
+      ['Manju','72.20%'],
+      ['Rotash Kumar','72.20%'],
+      ['Karina','71.70%'],
+      ['Rakesh Singh','71.70%'],
+      ['Alka','71.60%'],
+      ['Dinesh Kumar','71.30%'],
+      ['Manisha','71.20%'],
+      ['Mamta Sharma','71.00%'],
+      ['Navneet','70.90%'],
+      ['Omkla','70.90%'],
+      ['Hanuman Prasad','70.70%'],
+      ['Priyanka Baijua','70.70%'],
+      ['Gopi Ram','70.50%'],
+      ['Kavita','70.50%'],
+      ['Sudesh','70.30%'],
+      ['Sarita','70.20%'],
+      ['Parja','70.10%'],
+      ['Prameela','70.00%']
+    ]
+  };
+
+  const students = topperData[batch] || [];
+
+  let rows = '';
+
+  students.forEach(function(student, index){
+    rows +=
+      '<tr>' +
+        '<td style="padding:9px;border-bottom:1px solid #ddd;">' + (index + 1) + '</td>' +
+        '<td style="padding:9px;border-bottom:1px solid #ddd;font-weight:700;">' + student[0] + '</td>' +
+        '<td style="padding:9px;border-bottom:1px solid #ddd;color:#d32f2f;font-weight:800;">' + student[1] + '</td>' +
+      '</tr>';
+  });
+
+  openFacilityPopup(
+    batch + ' Passout Session - Topper Students',
+    '<button onclick="openToppers()" style="margin-bottom:15px;padding:8px 14px;cursor:pointer;font-weight:700;">← Back to Batch-wise Toppers</button>' +
+    '<div style="overflow-x:auto;">' +
+      '<table style="width:100%;border-collapse:collapse;text-align:left;">' +
+        '<thead>' +
+          '<tr style="background:#0c5c38;color:white;">' +
+            '<th style="padding:10px;">Rank</th>' +
+            '<th style="padding:10px;">Student Name</th>' +
+            '<th style="padding:10px;">Percentage</th>' +
+          '</tr>' +
+        '</thead>' +
+        '<tbody>' + rows + '</tbody>' +
+      '</table>' +
+    '</div>'
+  );
 }
 
 function openSyllabus(){
